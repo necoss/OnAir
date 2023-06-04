@@ -130,9 +130,9 @@ body {
             cursor: pointer;
             z-index: 1;
 
-            & > span,
-            & > span::before,
-            & > span::after {
+            &>span,
+            &>span::before,
+            &>span::after {
               display: block;
               position: absolute;
               width: 100%;
@@ -141,12 +141,12 @@ body {
               transition-duration: .25s;
             }
 
-            & > span::before {
+            &>span::before {
               content: '';
               top: -8px;
             }
-  
-            & > span::after {
+
+            &>span::after {
               content: '';
               top: 8px;
             }
@@ -170,25 +170,73 @@ body {
             box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
             transition-duration: .25s;
 
+            &:li(2){
+              display: flex;
+              justify-content: center;
+            }
+
             .menu__item {
               display: block;
               padding: 12px 24px;
-  
+
               font-family: 'Ubuntu';
               font-style: normal;
               font-weight: 500;
               font-size: 20px;
               line-height: 23px;
               color: #FFFFFF;
-  
+
               text-decoration: none;
               transition-duration: .25s;
 
             }
 
-            .menu__item__logo{
+            .menu__item__logo {
               margin-top: -79px;
               margin-left: -3px;
+            }
+
+            .menu__item__search{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 10px;
+              margin-top: 10px;
+
+              .menu__item__search--input {
+                text-align: center;
+                background: #232229;
+                color: white;
+                border-radius: 13px;
+                border: 1px solid transparent;
+                padding: 12px;
+                min-width: 320px;
+  
+                &:focus{
+                  outline: none;
+                }
+                
+  
+                &:focus:hover{
+                  border: 1px solid white;
+                }
+  
+                &::placeholder{
+                  color: #4E4C5E;
+                  text-overflow: ellipsis;
+                }
+              }
+            }
+
+            .menu__item--user{
+              position: relative;
+              padding-left: 55px;
+
+              iconify-icon{
+                position: absolute;
+                left: 23px;
+                top: 9px;
+              }
             }
           }
         }

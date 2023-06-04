@@ -152,6 +152,14 @@ body header .nav-bar nav .nav-bar--hamburger .menu__box {
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
 }
+body header .nav-bar nav .nav-bar--hamburger .menu__box:li(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item {
   display: block;
   padding: 12px 24px;
@@ -168,6 +176,63 @@ body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item {
 body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item__logo {
   margin-top: -79px;
   margin-left: -3px;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item__search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item__search .menu__item__search--input {
+  text-align: center;
+  background: #232229;
+  color: white;
+  border-radius: 13px;
+  border: 1px solid transparent;
+  padding: 12px;
+  min-width: 320px;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item__search .menu__item__search--input:focus {
+  outline: none;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item__search .menu__item__search--input:focus:hover {
+  border: 1px solid white;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item__search .menu__item__search--input::-webkit-input-placeholder {
+  color: #4E4C5E;
+  text-overflow: ellipsis;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item__search .menu__item__search--input::-moz-placeholder {
+  color: #4E4C5E;
+  text-overflow: ellipsis;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item__search .menu__item__search--input:-ms-input-placeholder {
+  color: #4E4C5E;
+  text-overflow: ellipsis;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item__search .menu__item__search--input::-ms-input-placeholder {
+  color: #4E4C5E;
+  text-overflow: ellipsis;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item__search .menu__item__search--input::placeholder {
+  color: #4E4C5E;
+  text-overflow: ellipsis;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item--user {
+  position: relative;
+  padding-left: 55px;
+}
+body header .nav-bar nav .nav-bar--hamburger .menu__box .menu__item--user iconify-icon {
+  position: absolute;
+  left: 23px;
+  top: 9px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
