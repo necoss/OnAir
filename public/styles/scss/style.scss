@@ -1,0 +1,241 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu';
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1400px;
+  // margin-right: auto;
+  // margin-left: auto;
+  padding-right: 70px;
+  padding-left: 70px;
+}
+
+body {
+  header {
+
+    // NAVIGATION BAR
+    .nav-bar {
+      background: #121212;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      nav {
+        @include flex-align-center();
+
+        ul {
+          list-style: none;
+        }
+
+        .nav-bar-ul--logo {
+          margin-right: 56px;
+        }
+
+        .nav-bar-ul--list {
+          display: flex;
+
+
+          li {
+            &:not(:last-child) {
+              margin-right: 40px;
+            }
+
+            a {
+              font-style: normal;
+              font-weight: 500;
+              font-size: 19px;
+              line-height: 28px;
+              color: #FFFFFF;
+            }
+          }
+        }
+
+        .nav-bar-ul--options {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          min-width: 70%;
+
+          li {
+            position: relative;
+
+            &:first-child {
+              margin-right: 70px;
+            }
+
+            iconify-icon {
+              position: absolute;
+              top: 5px;
+              left: -25px;
+            }
+
+            a {
+              font-style: normal;
+              font-weight: 500;
+              font-size: 19px;
+              line-height: 28px;
+              color: #FFFFFF;
+            }
+          }
+        }
+
+        // Burger menu
+        .nav-bar--hamburger {
+          display: none;
+
+          #menu__toggle {
+            opacity: 0;
+
+            &:checked~.menu__btn>span {
+              transform: rotate(45deg);
+            }
+
+            &:checked~.menu__btn>span::before {
+              top: 0;
+              transform: rotate(0);
+            }
+
+            &:checked~.menu__btn>span::after {
+              top: 0;
+              transform: rotate(90deg);
+            }
+
+            &:checked~.menu__box {
+              visibility: visible;
+              left: 0;
+            }
+          }
+
+          .menu__btn {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 25px;
+            right: 20px;
+
+            width: 26px;
+            height: 26px;
+
+            cursor: pointer;
+            z-index: 1;
+
+            & > span,
+            & > span::before,
+            & > span::after {
+              display: block;
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              background-color: white;
+              transition-duration: .25s;
+            }
+
+            & > span::before {
+              content: '';
+              top: -8px;
+            }
+  
+            & > span::after {
+              content: '';
+              top: 8px;
+            }
+
+          }
+
+          .menu__box {
+            display: block;
+            position: fixed;
+            visibility: hidden;
+            top: 0;
+            left: -100%;
+
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+
+            list-style: none;
+            background-color: rgba(0, 0, 0, 0.95);
+            box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+            transition-duration: .25s;
+
+            .menu__item {
+              display: block;
+              padding: 12px 24px;
+  
+              font-family: 'Ubuntu';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 20px;
+              line-height: 23px;
+              color: #FFFFFF;
+  
+              text-decoration: none;
+              transition-duration: .25s;
+
+            }
+
+            .menu__item__logo{
+              margin-top: -79px;
+              margin-left: -3px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+// Adaptive
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .container {
+    max-width: 480px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  body {
+    header {
+
+      // NAVIGATION BAR
+      .nav-bar {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        nav {
+          justify-content: space-between;
+
+          .nav-bar-ul--logo {
+            margin-right: 56px;
+          }
+
+          .nav-bar-ul--list {
+            display: none;
+          }
+
+          .nav-bar-ul--options {
+            display: none;
+          }
+
+          .nav-bar--hamburger {
+            display: block;
+          }
+        }
+      }
+    }
+
+  }
+}
